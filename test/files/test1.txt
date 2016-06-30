@@ -1,0 +1,3 @@
+@@@dependsOn:dep1
+@@@dependsOn:dep2
+@@@name:testNode1

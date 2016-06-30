@@ -1,0 +1,32 @@
+{
+    inputParams:{
+        dir:"testFiles",
+        ext:"js"
+        //excludeContains:["3rdParty"]
+    },
+    outputParams:{
+        dir:"testFiles",
+        ext:[ "jsp", "html", "htm" ]
+    },
+    extendsPatterns:[
+        "Util.extend\\(.*?\s*,\s*(.*?)\\)"
+    ],
+    startStopTags: {
+        from:"<!-- includeApp -->",
+        to:"<!-- /includeApp -->"
+    },
+
+    startFrom:"testFiles/webapp/WEB-INF",
+    prefix:"",
+    pathReplacer:{
+        from:"testFiles/webapp/WEB-INF/",
+        to:"",
+        prefix:"",
+        suffix:""
+    },
+    concatFile:{
+        storePath:"output.js",
+        path:"output.js"
+    },
+    template:"<script type=\"text/javascript\", src=\"***file***\"></script>"
+}

@@ -1,0 +1,5 @@
+platforms/*
+.idea
+.sass-cache
+testFiles/
+output.js
