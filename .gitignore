@@ -3,3 +3,4 @@ platforms/*
 .sass-cache
 testFiles/
 output.js
+node_modules/

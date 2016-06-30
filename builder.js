@@ -1,19 +1,29 @@
+#!/usr/bin/env node
+
 /**
  * Created by shaddy on 22.06.16.
  */
-
-
+global.__base = __dirname + '/';
+const VERSION = "0.0.1";
 const log4js = require('log4js');
-log4js.configure('./log4js.json');
+log4js.configure(global.__base + 'log4js.json');
 const logger = log4js.getLogger();
 
-var opt = require('node-getopt').create([
+var getOpt = require('node-getopt').create([
     ['c' , 'config=ARG'                    , 'config'],
     ['h' , 'help'                , 'display this help'],
     ['v' , 'version'             , 'show version']
 ])              // create Getopt instance
     .bindHelp()     // bind option 'help' to default action
-    .parseSystem(); // parse command lin
+var opt = getOpt.parseSystem(); // parse command lin
+if (opt.options.version){
+    console.log("version is:", VERSION);
+    process.exit(0);
+}
+if (!opt.options.config){
+    getOpt.showHelp();
+    process.exit(1);
+}
 
 const fs = require("fs");
 const path = require('path');
@@ -40,6 +50,7 @@ var Replacer = require("./Replacer.js");
  *
  * }} Configuration
  */
+console.log(opt);
 /** @type Configuration */
 var config = eval("(" + fs.readFileSync(opt.options.config).toString() + ")");
 var files = Files.makeList(config.inputParams);

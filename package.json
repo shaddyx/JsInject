@@ -1,0 +1,35 @@
+{
+  "name": "js-injector",
+  "version": "1.0.1",
+  "description": "this tool is used for inject javascripts to main html page(s)",
+  "main": "builder.js",
+  "directories": {
+    "test": "test"
+  },
+  "bin": {
+    "jsInjector": "./builder.js"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shaddyx/JsInject.git"
+  },
+  "keywords": [
+    "inject",
+    "javascript",
+    "html"
+  ],
+  "author": "Shaddy",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/shaddyx/JsInject/issues"
+  },
+  "homepage": "https://github.com/shaddyx/JsInject#readme",
+  "dependencies": {
+    "escape-regexp": "0.0.1",
+    "log4js": "^0.6.37",
+    "node-getopt": "^0.2.3"
+  }
+}
